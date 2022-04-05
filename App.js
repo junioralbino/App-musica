@@ -7,8 +7,8 @@ export default function App() {
       <ScrollView style={styles.container}>
         <StatusBar hidden />
         <View style={styles.header}>
-           <Text style={{textAlign: 'center', color:'white', fontSize: 24}}>Music Star</Text>  
-        </View> 
+          <Text>Criando um app</Text>
+        </View>
       </ScrollView>
   );
 }
