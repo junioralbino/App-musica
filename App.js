@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import react, { useState } from 'react';
 import {ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Audio } from 'expo-av';
+import { TouchableOpacity } from 'react-native-web';
+import {AntDesign} from '@expo/vector-icons'
 
 export default function App() {
 
@@ -23,7 +25,7 @@ export default function App() {
      {
       nome: 'Numb',
       artista: 'Linkin Park',
-      playing: 'true',
+      playing: 'false',
       file: ''
      }
   ]);
@@ -37,7 +39,24 @@ export default function App() {
         
         <View style={styles.table}>
            <Text style={{width: '50%', color:'rgb(200, 200, 200)' }}>Música</Text>
+           <Text style={{width: '50%', color:'rgb(200, 200, 200)' }}>Artista</Text>
         </View>
+
+         {
+           musicas.map((val) => {
+              if(val.playing){
+                //rederiza musica que esta tocando
+                <View>
+                  <TouchableOpacity>
+                      <Text>{val.nome}</Text>
+                      <Text>{val.artista}</Text>
+                  </TouchableOpacity>
+                </View>
+              }else{
+
+              }
+           })
+         }
       </ScrollView>
   );
 }
